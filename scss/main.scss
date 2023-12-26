@@ -2,3 +2,23 @@
 @import "./base/index";
 
 @import "./layout/index";
+
+.page {
+  &:nth-child(2n) {
+    background-color: salmon;
+  }
+  &.history {
+    height: 200vh;
+  }
+}
+
+.mv {
+  background: url("../img/mv/visual12.jpg") center/cover no-repeat;
+
+  .mv-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+  }
+}

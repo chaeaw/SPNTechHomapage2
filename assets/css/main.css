@@ -1,0 +1,205 @@
+/* height */
+/* color */
+* {
+  font-family: "Pretendard";
+  font-weight: 400;
+  letter-spacing: 0.4px;
+}
+
+.container {
+  max-width: 1600px;
+  height: 100%;
+  margin-inline: 24px;
+  margin: 0 auto;
+}
+
+/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input,
+select {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.header {
+  width: 100vw;
+  height: 90px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+}
+
+.header-wrap {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.gnb .gnb-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  height: 100%;
+}
+.gnb .gnb-item {
+  padding-inline: 6px;
+  height: 100%;
+}
+.gnb .gnb-item .gnb-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  position: relative;
+  height: 100%;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  transition: all 200ms;
+}
+.gnb .gnb-item .gnb-link:hover {
+  color: #fcb500;
+}
+.gnb .gnb-item .gnb-link:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+.gnb .gnb-item .gnb-link::after {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 200ms;
+  content: "";
+  position: absolute;
+  top: calc(50% - 8px);
+  right: -14px;
+  transform: translateY(-50%);
+  background: url("../img/icon/ico-point.png") center/cover no-repeat;
+  width: 10px;
+  height: 10px;
+}
+
+.h-logo {
+  display: flex;
+  align-items: center;
+  max-width: 220px;
+}
+
+.footer {
+  background: #222;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-block: 30px;
+}
+
+.f-logo {
+  text-align: center;
+}
+
+.footer-txt {
+  font-size: 18px;
+  color: #666;
+  text-align: center;
+}
+.footer-txt + .footer-txt {
+  margin-top: 10px;
+}
+
+.page:nth-child(2n) {
+  background-color: salmon;
+}
+.page.history {
+  height: 200vh;
+}
+
+.mv {
+  background: url("../img/mv/visual12.jpg") center/cover no-repeat;
+}
+.mv .mv-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
