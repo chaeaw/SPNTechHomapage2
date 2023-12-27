@@ -1,12 +1,59 @@
 * {
   font-family: "Pretendard";
-  font-weight: 400;
+  font-weight: 200;
   letter-spacing: 0.4px;
+}
+
+html {
+  font-size: 62.5%;
+  // 1rem = 10px
+  color: #fff;
 }
 
 .container {
   max-width: 1600px;
-  height: 100%;
+
   margin-inline: 24px;
   margin: 0 auto;
+}
+
+.section-title {
+  font-size: 6.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 6.4rem;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* font-weight */
+.fw600 {
+  font-weight: 600;
+}
+.fw700 {
+  font-weight: 700;
+}
+.fw800 {
+  font-weight: 800;
+}
+.fw900 {
+  font-weight: 900;
+}
+
+/* margin */
+.mgR32 {
+  margin-right: 32px;
+}
+.point-color {
+  color: $point-color-txt;
 }

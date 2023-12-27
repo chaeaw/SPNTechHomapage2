@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- gsap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
+
+    <!-- fullpage -->
     <link rel="stylesheet" href="./assets/css/jquery.fullpage.min.css" />
 
     <link rel="stylesheet" href="./assets/css/fonts.css" />
@@ -19,7 +25,7 @@
           </a>
           <nav class="gnb">
             <ul class="gnb-list">
-              <li class="gnb-item">
+              <li class="gnb-item active">
                 <a href="#" class="gnb-link"> home </a>
               </li>
               <li class="gnb-item">
@@ -40,17 +46,19 @@
       </div>
     </header>
 
-    <section class="mv page">
+    <section class="mv section">
       <div class="container mv-wrap">
         <div class="mv-txt-group">
-          <div class="mv-main">IT업계의 진정한 선두주자!</div>
+          <div class="mv-main">
+            IT업계의 진정한 <strong class="point-color fw900">선두주자!</strong>
+          </div>
           <div class="mv-sub">다양한 IT컨설팅</div>
           <div class="mv-sub2">
             고객의 업무에 가장 효율적인 컨설팅 및 설계를 바탕으로<br />
             구축에 필요한
             <strong class="bold">하드웨어, 소프트웨어, 솔루션등</strong>을
             포함하여<br />
-            <strong class="bold point-color">최적의 IT SOLUTION</strong>을
+            <strong class="fw600 point-color">최적의 IT SOLUTION</strong>을
             구축하고 통합하며 운영을 지원합니다.
           </div>
         </div>
@@ -61,7 +69,7 @@
         </div>
       </div>
     </section>
-    <section class="company page greeting">
+    <section class="company section greeting">
       <div class="container">
         <div class="greeting-txt-box">
           <p class="greeting-main">
@@ -85,15 +93,385 @@
         </div>
       </div>
     </section>
-    <section class="company page history">
-      <div class="container"></div>
+    <section class="company section history fp-auto-height">
+      <div class="container history-wrap">
+        <div class="left">
+          <span>2023년</span>
+          <span>~</span>
+          <span>2016년</span>
+        </div>
+        <div class="right">
+          <ul class="histroy-list">
+            <li class="history-item">
+              <div class="year">2023</div>
+              <div class="desc">
+                <span>우진프라스틱 본사 ( Network 구성 및 유지보수 )</span>
+                <span>우진VINA - 베트남 ( Network 구성 및 유지보수 )</span>
+              </div>
+            </li>
+            <li class="history-item">
+              <div class="year">2022</div>
+              <div class="desc">
+                <span>NH 리츠운영 ( Network 구성 )</span>
+                <span>진원생명 과학 ( Network 구성 )</span>
+                <span>정보통신공사업 면허 취득</span>
+              </div>
+            </li>
+            <li class="history-item">
+              <div class="year">2021</div>
+              <div class="desc">
+                <span>㈜트렉시 ( IT Solution 및 사무기기 구축 )</span>
+                <span
+                  >대진공무㈜ ( 네트워크, 통신 구축 및 데이터 서버 구축 )</span
+                >
+              </div>
+            </li>
+            <li class="history-item">
+              <div class="year">2020</div>
+              <div class="desc">
+                <span>㈜슈퍼홀릭 ( IT Solution 및 사무기기 구축 )</span>
+              </div>
+            </li>
+            <li class="history-item">
+              <div class="year">2019</div>
+              <div class="desc">
+                <span
+                  >농협 네트웍스 ( 보안 Solution 구성 및 전산실 유지보수 )</span
+                >
+                <span
+                  >농협 파트너스 ( 보안 Solution 구성 및 전산실 유지보수 )</span
+                >
+              </div>
+            </li>
+            <li class="history-item">
+              <div class="year">2018</div>
+              <div class="desc">
+                <span
+                  >㈜그린플러스 종합건설 ( 신축건물 CCTV 구성 및 통신 설비 구축
+                  및 유지보수 )</span
+                >
+              </div>
+            </li>
+            <li class="history-item">
+              <div class="year">2017</div>
+              <div class="desc">
+                <span>NH 개발 ( Network 및 교환기 구성 및 유지보수 )</span>
+                <span>NH 협동기획 ( Network 및 교환기 구성 및 유지보수 )</span>
+              </div>
+            </li>
+            <li class="history-item">
+              <div class="year">2016</div>
+              <div class="desc">
+                <span>㈜에스피엔텍 설립</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
-    <section class="business page">business</section>
-    <section class="partners page">partners</section>
-    <section class="contact page contact-form">form</section>
-    <section class="contact page way">way to come</section>
+    <section class="business section">
+      <div class="container business-wrap">
+        <div class="left">
+          <div class="section-title">business</div>
+          <div class="section-desc">
+            <p>
+              ㈜에스피엔텍은 고객의 다양한 비즈니스 업무 환경을 위한 시스템 통합
+              경험과 노하우로 고객의 요구사항에 맞는 최적의 IT Solution을 진단,
+              설계, 구축, 통합하여 고객의 경쟁력과 가치를 실현합니다.
+            </p>
+            <br />
 
-    <footer class="footer page fp-auto-height">
+            <p>
+              고객의 업무에 가장 효율적인 컨설팅 및 설계를 바탕으로 구축에
+              필요한 하드웨어, 소프트웨어, 솔루션을 포함하여 최적의 IT
+              Solution을 구축하고 통합하며 운영을 지원합니다.
+            </p>
+            <br />
+            <p>
+              고객이 원하는 방향에 가장 적합한 Solution을 구축하며,
+              기획-개발-구축-운영의 서비스를 제공합니다.
+            </p>
+          </div>
+        </div>
+        <div class="right">
+          <ul class="card-list">
+            <li class="card-item">
+              <div class="card-left">
+                <div class="ico-box">
+                  <img
+                    src="./assets/img/icon/section03-1.png"
+                    alt=""
+                    class="ico-origin"
+                  />
+                  <img
+                    src="./assets/img/icon/section03-1-1.png"
+                    alt=""
+                    class="ico-white"
+                  />
+                </div>
+                <div class="card-title">IT 컨설팅</div>
+              </div>
+              <div class="card-right">
+                <span>고객의 비즈니스의 최적 Solution 컨설팅 제공</span>
+                <span>IT 전략 컨설팅 제공</span>
+                <span>IT 혁신 방향 / 마스터플랜</span>
+                <span>IT 운영 효과 분석 / 최적화</span>
+              </div>
+            </li>
+            <li class="card-item">
+              <div class="card-left">
+                <div class="ico-box">
+                  <img
+                    src="./assets/img/icon/section03-2.png"
+                    alt=""
+                    class="ico-origin"
+                  />
+                  <img
+                    src="./assets/img/icon/section03-2-1.png"
+                    alt=""
+                    class="ico-white"
+                  />
+                </div>
+                <div class="card-title">IT 구축</div>
+              </div>
+              <div class="card-right">
+                <span>고객 환경에 맞는 최적화된 네트워크</span>
+                <span>간략화된 선로 구성</span>
+                <span>IT 운영에 맞는 환경 구축</span>
+                <span>최적화된 환경으로 높은 가시성 제공</span>
+              </div>
+            </li>
+            <li class="card-item">
+              <div class="card-left">
+                <div class="ico-box">
+                  <img
+                    src="./assets/img/icon/section03-3.png"
+                    alt=""
+                    class="ico-origin"
+                  />
+                  <img
+                    src="./assets/img/icon/section03-3-1.png"
+                    alt=""
+                    class="ico-white"
+                  />
+                </div>
+                <div class="card-title">기술지원</div>
+              </div>
+              <div class="card-right">
+                <span>장애 처리 서비스 / 제품 교체</span>
+                <span>진단 서비스</span>
+                <span>최적화 서비스</span>
+                <span>교육 및 기술 지원 서비스</span>
+              </div>
+            </li>
+            <li class="card-item">
+              <div class="card-left">
+                <div class="ico-box">
+                  <img
+                    src="./assets/img/icon/section03-4.png"
+                    alt=""
+                    class="ico-origin"
+                  />
+                  <img
+                    src="./assets/img/icon/section03-4-1.png"
+                    alt=""
+                    class="ico-white"
+                  />
+                </div>
+                <div class="card-title">통합<br />유지보수</div>
+              </div>
+              <div class="card-right">
+                <span>사전 예방 점검 / 장애 관리</span>
+                <span>성능 분석 및 개선을 통한 가용성 보장</span>
+                <span>IT 시스템 이력 관리를 통한 안정적 운영</span>
+                <span>정기 점검 / 원격 점검</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="partners section">
+      <div class="container flex-center partners-wrap">
+        <div class="section-title">partners</div>
+        <ul class="logo-list">
+          <li class="logo-item">
+            <img src="./assets/img/prt_logo/logo1.png" alt="" />
+          </li>
+          <li class="logo-item">
+            <img src="./assets/img/prt_logo/logo2.png" alt="" />
+          </li>
+          <li class="logo-item">
+            <img src="./assets/img/prt_logo/logo3.png" alt="" />
+          </li>
+          <li class="logo-item">
+            <img src="./assets/img/prt_logo/logo4.png" alt="" />
+          </li>
+          <li class="logo-item">
+            <img src="./assets/img/prt_logo/logo5.png" alt="" />
+          </li>
+          <li class="logo-item">
+            <img src="./assets/img/prt_logo/logo6.png" alt="" />
+          </li>
+          <li class="logo-item">
+            <img src="./assets/img/prt_logo/logo7.png" alt="" />
+          </li>
+          <li class="logo-item">
+            <img src="./assets/img/prt_logo/logo8.png" alt="" />
+          </li>
+          <li class="logo-item">
+            <img src="./assets/img/prt_logo/logo9.png" alt="" />
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="contact section contact-form">
+      <div class="container contact-wrap">
+        <div class="left">
+          <div class="section-title">contact</div>
+        </div>
+        <div class="right">
+          <form class="form">
+            <div class="type-group form-group full">
+              <p class="form-title">프로젝트 분류</p>
+              <div class="type-input-group">
+                <input
+                  type="radio"
+                  id="solution"
+                  name="project_type"
+                  class="hidden input-radio"
+                  checked
+                />
+                <label for="solution" class="label-radio">IT 컨설팅</label>
+                <input
+                  type="radio"
+                  id="maintain"
+                  name="project_type"
+                  class="hidden input-radio"
+                />
+                <label for="maintain" class="label-radio">IT 구축</label>
+                <input
+                  type="radio"
+                  id="web"
+                  name="project_type"
+                  class="hidden input-radio"
+                />
+                <label for="web" class="label-radio">기술지원</label>
+                <input
+                  type="radio"
+                  id="app"
+                  name="project_type"
+                  class="hidden input-radio"
+                />
+                <label for="app" class="label-radio">통합 유지보수</label>
+              </div>
+            </div>
+            <div class="company-name form-group mgR32">
+              <label for="company_name" class="form-title">업체명</label>
+              <input
+                type="text"
+                id="company_name"
+                name="company_name"
+                class="input-text"
+                placeholder="상호명을 작성해주세요."
+                autocomplete="off"
+                required
+              />
+            </div>
+            <div class="manager-name form-group">
+              <label for="manager_name" class="form-title">담당자명</label>
+              <input
+                type="text"
+                id="manager_name"
+                name="manager_name"
+                class="input-text"
+                placeholder="담당자명을 작성해주세요."
+                autocomplete="off"
+                required
+              />
+            </div>
+            <div class="contact-num form-group mgR32">
+              <label for="contact_num" class="form-title">연락처</label>
+              <input
+                type="text"
+                id="contact_num"
+                name="contact_num"
+                class="input-text"
+                placeholder="숫자만 작성해주세요."
+                autocomplete="off"
+                required
+              />
+            </div>
+            <div class="email form-group">
+              <label for="email" class="form-title">이메일</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="input-text"
+                placeholder="견적받으실 이메일을 작성해주세요."
+                autocomplete="off"
+                required
+              />
+            </div>
+            <div class="pj-name form-group mgR32">
+              <label for="pj_name" class="form-title">프로젝트명</label>
+              <input
+                type="text"
+                id="pj_name"
+                name="pj_name"
+                class="input-text"
+                placeholder="프로젝트명을 작성해주세요."
+                autocomplete="off"
+                required
+              />
+            </div>
+            <div class="file form-group">
+              <p class="form-title">파일 첨부</p>
+              <div class="file-input-group">
+                <input
+                  class="input-text"
+                  placeholder="회사소개서나 정리된 소개 자료를 첨부해주세요."
+                  disabled
+                  required
+                />
+                <label for="file" class="label-file">
+                  <img
+                    src="./assets/img/icon/ico-upload.png"
+                    alt="첨부"
+                    class="ico-upload"
+                  />
+                </label>
+                <input
+                  type="file"
+                  name="file"
+                  id="file"
+                  class="form-file hidden"
+                />
+              </div>
+            </div>
+            <div class="detail form-group full">
+              <label for="detail" class="form-title">프로젝트명</label>
+              <textarea
+                id="detail"
+                name="detail"
+                class="input-text input-textarea"
+                placeholder="자유롭게 작성해주세요."
+                rows="4"
+                autocomplete="off"
+                required
+              ></textarea>
+            </div>
+            <div class="form-submit">
+              <input type="submit" value="견적 문의하기" class="input-submit" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="contact section way">way to come</section>
+
+    <footer class="footer section fp-auto-height">
       <a class="f-logo logo" href="#">
         <img src="./assets/img/logo_spnt.png" alt="에스피엔텍 로고" />
       </a>
@@ -110,10 +488,11 @@
     $(document).ready(function () {
       $("#fullpage").fullpage({
         autoScrolling: true,
-        sectionSelector: ".page",
+        sectionSelector: ".section",
         scrollingSpeed: 1000,
         scrollBar: true,
         normalScrollElements: ".history",
+        scrollOverflow: true,
       });
     });
   </script>

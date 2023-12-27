@@ -1,13 +1,13 @@
 .header {
   width: 100vw;
   height: $header-height;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.2);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 9;
+  z-index: 99;
 }
 
 .header-wrap {
@@ -24,52 +24,52 @@
     gap: 40px;
     height: 100%;
   }
+}
+.gnb-item {
+  padding-inline: 4px;
+  height: 100%;
+}
+.gnb-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  position: relative;
+  height: 100%;
+  padding-inline: 8px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #fff;
 
-  .gnb-item {
-    padding-inline: 6px;
-    height: 100%;
+  transition: all 200ms;
 
-    .gnb-link {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-transform: uppercase;
-      position: relative;
-      height: 100%;
-      font-size: 18px;
-      font-weight: 600;
-      color: #fff;
-
-      transition: all 200ms;
-
-      &:hover {
-        color: $point-color-txt;
-        &::after {
-          opacity: 1;
-          visibility: visible;
-        }
-      }
-
-      &::after {
-        opacity: 0;
-        visibility: hidden;
-        transition: all 200ms;
-
-        content: "";
-        position: absolute;
-        top: calc(50% - 8px);
-        right: -14px;
-        transform: translateY(-50%);
-        background: url("../img/icon/ico-point.png") center/cover no-repeat;
-        width: 10px;
-        height: 10px;
-      }
+  &:hover,
+  .active & {
+    color: $point-color-txt;
+    &::after {
+      opacity: 1;
+      visibility: visible;
     }
+  }
+
+  &::after {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 200ms;
+
+    content: "";
+    position: absolute;
+    top: calc(50% - 8px);
+    right: -14px;
+    transform: translateY(-50%);
+    background: url("../img/icon/ico-point.png") center/cover no-repeat;
+    width: 10px;
+    height: 10px;
   }
 }
 
 .h-logo {
   display: flex;
   align-items: center;
-  max-width: 220px;
+  max-width: 200px;
 }
