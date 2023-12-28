@@ -8,13 +8,37 @@ html {
   font-size: 62.5%;
   // 1rem = 10px
   color: #fff;
+
+  @include desktop {
+    font-size: 50%;
+  }
+
+  @include mobile {
+    font-size: 45%;
+  }
 }
 
 .container {
   max-width: 1600px;
-
-  margin-inline: 24px;
+  padding-inline: 24px;
   margin: 0 auto;
+
+  @include desktop {
+    &:not(.greeting-wrap, .header-wrap) {
+      padding-inline: 124px;
+    }
+  }
+
+  @include tablet {
+    &:not(.greeting-wrap, .header-wrap) {
+      padding-inline: 48px !important;
+    }
+  }
+  @include mobile {
+    &:not(.greeting-wrap, .header-wrap) {
+      padding-inline: 24px !important;
+    }
+  }
 }
 
 .section-title {
@@ -22,6 +46,10 @@ html {
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 6.4rem;
+}
+
+.logo {
+  min-width: 128px;
 }
 
 .flex-center {

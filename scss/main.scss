@@ -1,9 +1,10 @@
 @import "./helpers/index";
 @import "./base/index";
 
+@import "./components/index";
 @import "./layout/index";
 
-.section {
+.section:not(.footer) {
   background-color: #000;
 }
 
@@ -160,6 +161,7 @@
   }
 }
 
+/* history 연혁 */
 .history {
   position: relative;
 
@@ -168,11 +170,31 @@
   .history-wrap {
     display: flex;
     padding-block: 280px;
+
+    @include desktop {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
+  .section-title {
+    @include hidden;
+
+    @include desktop {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
   .right,
   .left {
     width: 50%;
+
+    @include desktop {
+      margin-top: 64px;
+      width: 100%;
+    }
   }
 
   .left {
@@ -181,6 +203,11 @@
     gap: 10.6rem;
     color: #fff;
     text-align: center;
+
+    @include desktop {
+      @include hidden;
+    }
+
     span {
       font-size: 9.6rem;
       font-weight: 900;
@@ -225,19 +252,37 @@
   }
 }
 
+/* business 사업 분야*/
 .business {
   .business-wrap {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include desktop {
+      flex-direction: column;
+      justify-content: center;
+    }
   }
   .left {
     flex-basis: 460px;
     flex-shrink: 0;
     margin-right: 8.5rem;
+
+    @include desktop {
+      flex-basis: auto;
+      margin: 0 auto;
+    }
+
     .section-desc {
       font-size: 2.2rem;
       max-width: 443px;
+
+      @include desktop {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+      }
     }
   }
 
@@ -250,8 +295,8 @@
     }
 
     .card-item {
-      height: 280px;
-      flex-basis: 496px;
+      min-height: 280px;
+      flex-basis: calc(50% - 32px);
       flex-grow: 1;
       flex-shrink: 0;
       display: flex;
@@ -262,15 +307,17 @@
 
       transition: all 200ms ease;
 
-      &:hover {
-        background: $point-color;
-        .ico-white {
-          opacity: 1;
-          visibility: visible;
-        }
-        .ico-origin {
-          opacity: 0;
-          visibility: hidden;
+      @include hover {
+        &:hover {
+          background: $point-color;
+          .ico-white {
+            opacity: 1;
+            visibility: visible;
+          }
+          .ico-origin {
+            opacity: 0;
+            visibility: hidden;
+          }
         }
       }
     }
@@ -294,6 +341,13 @@
       justify-content: space-between;
       span {
         font-size: 2rem;
+        + span {
+          margin-top: 8px;
+        }
+
+        @include mediaQuery(1460px) {
+          font-size: 1.8rem;
+        }
       }
     }
 
@@ -312,6 +366,7 @@
   }
 }
 
+/* partners 고객사*/
 .partners {
   .partners-wrap {
     display: flex;
@@ -331,126 +386,68 @@
   }
 }
 
-.contact {
-  .contact-wrap {
+/* contact 문의*/
+.contact-form {
+  .contact-form-wrap {
     display: flex;
-
     justify-content: space-between;
+
+    @include desktop {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+/* way 오시는 길 */
+.way {
+  .way-wrap {
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 132px;
+  }
+
+  .left {
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .way-txt-box {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      span {
+        display: block;
+
+        &.way-name {
+          font-size: 3.6rem;
+          font-weight: 700;
+          text-transform: uppercase;
+        }
+
+        &.way-address {
+          font-size: 2.4rem;
+          color: #c2c2c2;
+          margin-block: 14px;
+        }
+
+        &.way-info {
+          font-size: 2rem;
+          color: #777;
+          line-height: 3.2rem;
+          font-weight: 400;
+        }
+      }
+    }
   }
 
   .right {
-    .form {
-    }
-    width: 1024px;
-    .form-group {
-      display: inline-block;
-      width: calc(50% - 32px);
-      margin-bottom: 28px;
-      &.full {
-        display: block;
-        width: calc(100% - 32px);
-      }
-
-      &.file {
-        .file-input-group {
-          position: relative;
-        }
-        .file-input-group {
-          .ico-upload {
-            width: 16px;
-            height: auto;
-          }
-        }
-      }
-
-      .label-file {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        top: 0;
-        right: 0;
-        cursor: pointer;
-        padding-right: 16px;
-      }
-
-      .form-title {
-        display: block;
-        font-size: 2.6rem;
-        font-weight: 500;
-        margin-bottom: 16px;
-        text-align: left;
-      }
-
-      .type-input-group {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        .label-radio {
-          width: calc(25% - 24px);
-          height: 48px;
-          font-size: 2.4rem;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-          border: 1px solid #333;
-          border-radius: 8px;
-          cursor: pointer;
-        }
-
-        .input-radio {
-          &:checked + .label-radio {
-            border: 1px solid $point-color;
-            background-color: $point-color;
-            color: #fff;
-          }
-        }
-      }
-
-      .input-text {
-        border: 1px solid #333;
-        border-radius: 8px;
-        width: 100%;
-        height: 48px;
-        padding-left: 12px;
-        font-size: 2rem;
-        color: #fff;
-
-        background: #3d3d3d;
-
-        &::placeholder {
-          font-size: 1.8rem;
-        }
-      }
-      .input-textarea {
-        padding-top: 12px;
-        resize: none;
-        height: 176px;
-        overflow-y: hidden;
-      }
-    }
-
-    .form-submit {
-      display: flex;
-      justify-content: flex-end;
-      width: 100%;
-      margin-top: 36px;
-
-      .input-submit {
-        width: 50%;
-        height: 48px;
-        line-height: 48px;
-        border-radius: 8px;
-        border: 0;
-        background-color: $point-color;
-        color: #fff;
-        font-size: 1.8rem;
-        cursor: pointer;
-      }
+    .img-map {
+      margin-left: 32px;
+      width: calc(100% - 32px);
+      height: auto;
     }
   }
 }

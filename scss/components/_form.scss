@@ -1,0 +1,123 @@
+.form {
+  max-width: 1024px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0px 32px;
+  @include desktop {
+    margin-left: 0;
+  }
+}
+
+.form-group {
+  display: inline-block;
+  width: calc(50% - 16px);
+  margin-bottom: 20px;
+  &.full {
+    display: block;
+    width: calc(100%);
+  }
+
+  &.file {
+    .file-input-group {
+      position: relative;
+    }
+    .file-input-group {
+      .ico-upload {
+        width: 16px;
+        height: auto;
+      }
+    }
+  }
+
+  .label-file {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    padding-right: 16px;
+  }
+
+  .form-title {
+    display: block;
+    font-size: 2.4rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+    text-align: left;
+  }
+
+  .type-input-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .label-radio {
+      width: calc(25% - 24px);
+      height: $form-item-height;
+      font-size: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-color: #3d3d3d;
+      border: 1px solid #333;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .input-radio {
+      &:checked + .label-radio {
+        font-weight: 500;
+        border: 1px solid $point-color;
+        background-color: $point-color;
+        color: #fff;
+      }
+    }
+  }
+
+  .input-text {
+    border: 1px solid #333;
+    border-radius: 8px;
+    width: 100%;
+    height: calc($form-item-height + 2px);
+    padding-left: 12px;
+    font-size: 2rem;
+    color: #fff;
+
+    background: #3d3d3d;
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: 2rem;
+    }
+  }
+  .input-textarea {
+    padding-top: 12px;
+    resize: none;
+    height: 148px;
+    overflow-y: hidden;
+  }
+}
+
+.form-submit {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+
+  .input-submit {
+    width: calc(50% - 32px);
+    height: $form-item-height;
+    border-radius: 8px;
+    border: 0;
+    background-color: $point-color;
+    color: #fff;
+    font-weight: 500;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+}

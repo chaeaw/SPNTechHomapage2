@@ -13,21 +13,29 @@
 .header-wrap {
   display: flex;
   justify-content: space-between;
-  height: 100%;
+  height: inherit;
+  @include desktop {
+    padding-inline: calc(24px + 32px);
+  }
 }
 
 .gnb {
+  height: inherit;
   .gnb-list {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 40px;
-    height: 100%;
+    height: inherit;
+
+    @include desktop {
+      gap: 18px;
+    }
   }
 }
 .gnb-item {
   padding-inline: 4px;
-  height: 100%;
+  height: inherit;
 }
 .gnb-link {
   display: flex;
@@ -60,11 +68,18 @@
     content: "";
     position: absolute;
     top: calc(50% - 8px);
-    right: -14px;
+    right: -6px;
     transform: translateY(-50%);
     background: url("../img/icon/ico-point.png") center/cover no-repeat;
     width: 10px;
     height: 10px;
+
+    @include desktop {
+      top: calc(50% - 6px);
+      right: -4px;
+      width: 8px;
+      height: 8px;
+    }
   }
 }
 

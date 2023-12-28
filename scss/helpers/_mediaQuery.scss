@@ -1,0 +1,22 @@
+@mixin mediaQuery($breakpoint) {
+  @media all and (max-width: $breakpoint) and (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media all and (max-width: $breakpoint-desktop) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media all and (max-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media all and (max-width: $breakpoint-mobile) {
+    @content;
+  }
+}
