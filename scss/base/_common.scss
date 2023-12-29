@@ -13,8 +13,12 @@ html {
     font-size: 50%;
   }
 
-  @include mobile {
+  @include tablet {
     font-size: 45%;
+  }
+
+  @include mobile {
+    font-size: 35%;
   }
 }
 
@@ -36,6 +40,7 @@ html {
   }
   @include mobile {
     &:not(.greeting-wrap, .header-wrap) {
+      padding-block: 80px !important;
       padding-inline: 24px !important;
     }
   }
@@ -51,6 +56,8 @@ html {
 .logo {
   min-width: 128px;
 }
+
+/* style */
 
 .flex-center {
   display: flex;

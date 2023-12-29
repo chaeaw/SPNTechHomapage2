@@ -67,8 +67,8 @@
     margin-left: -12px;
     span {
       margin-bottom: -4px;
-      width: 18px;
-      height: 18px;
+      width: 1.8rem;
+      height: 1.8rem;
       border-left: 2px solid #fff;
       border-bottom: 2px solid #fff;
       -webkit-transform: rotate(-45deg);
@@ -122,7 +122,7 @@
 
 /* greeting 인사말 */
 .greeting {
-  background: url("../img/sectionBg/greetingBg.jpg");
+  background: url("../img/sectionBg/greetingBg.jpg") center/cover no-repeat;
 
   .container {
     display: flex;
@@ -144,6 +144,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @include mobile {
+      margin-top: 0;
+      padding-inline: 56px;
+    }
   }
 
   .greeting-main {
@@ -175,6 +180,9 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+    }
+
+    @include mobile {
     }
   }
 
@@ -231,6 +239,11 @@
       &:not(:first-child) {
         padding-block: 5.8rem;
       }
+
+      @include tablet {
+        justify-content: center;
+        padding-inline: 32px;
+      }
     }
     .year {
       font-size: 3.2rem;
@@ -241,6 +254,10 @@
 
     .desc {
       font-size: 2.6rem;
+
+      @include tablet {
+        flex-grow: 1;
+      }
       span {
         display: block;
 
@@ -292,6 +309,10 @@
 
       flex-wrap: wrap;
       gap: 32px;
+
+      @include mobile {
+        gap: 24px;
+      }
     }
 
     .card-item {
@@ -320,6 +341,12 @@
           }
         }
       }
+
+      @include mobile {
+        padding: 24px;
+        min-height: 200px;
+        flex-basis: 100%;
+      }
     }
 
     .card-left {
@@ -329,6 +356,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
+
       .card-title {
         font-size: 3.2rem;
         font-weight: 700;
@@ -339,10 +367,31 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      span {
+      gap: 8px 0;
+
+      @include mobile {
+        flex-direction: row;
+        flex-grow: 1;
+        flex-wrap: wrap;
+        align-content: space-evenly;
+      }
+
+      .card-right-item {
         font-size: 2rem;
-        + span {
+
+        @include mobile {
+          font-size: 2.6rem;
+          flex-basis: calc(50% - 24px);
+          list-style: circle;
+          list-style-position: inside;
+          text-indent: -20px;
+          word-break: keep-all;
+        }
+        + .card-right-item {
           margin-top: 8px;
+          @include mobile {
+            margin-top: 0;
+          }
         }
 
         @include mediaQuery(1460px) {
@@ -353,6 +402,13 @@
 
     .ico-box {
       position: relative;
+
+      img {
+        @include mobile {
+          max-width: 80px;
+          height: auto;
+        }
+      }
     }
 
     .ico-white {
@@ -378,11 +434,19 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 47px;
+
+    @include mobile {
+      gap: 24px;
+    }
   }
 
   .logo-item {
     flex-basis: calc(33.3% - 47px);
     text-align: center;
+
+    @include mobile {
+      flex-basis: calc(50% - 12px);
+    }
   }
 }
 
@@ -406,6 +470,11 @@
     display: flex;
     justify-content: space-between;
     padding-inline: 132px;
+
+    @include mobile {
+      flex-direction: column;
+      text-align: center;
+    }
   }
 
   .left {
@@ -418,6 +487,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+
       span {
         display: block;
 
@@ -438,6 +508,10 @@
           color: #777;
           line-height: 3.2rem;
           font-weight: 400;
+
+          @include mobile {
+            font-size: 2.2rem;
+          }
         }
       }
     }
@@ -448,6 +522,12 @@
       margin-left: 32px;
       width: calc(100% - 32px);
       height: auto;
+
+      @include mobile {
+        margin-left: 0;
+        margin-top: 32px;
+        max-width: 80%;
+      }
     }
   }
 }

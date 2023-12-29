@@ -9,6 +9,12 @@
 
 .f-logo {
   text-align: center;
+
+  img {
+    @include mobile {
+      max-width: 200px;
+    }
+  }
 }
 
 .footer-txt {
@@ -17,5 +23,9 @@
   text-align: center;
   & + .footer-txt {
     margin-top: 10px;
+  }
+
+  @include mobile {
+    font-size: 2rem;
   }
 }
