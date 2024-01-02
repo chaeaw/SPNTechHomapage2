@@ -1,7 +1,11 @@
 * {
   font-family: "Pretendard";
-  font-weight: 200;
+  font-weight: $basic-fw;
   letter-spacing: 0.4px;
+
+  @include mobile {
+    font-weight: $mobile-fw;
+  }
 }
 
 html {
@@ -18,31 +22,22 @@ html {
   }
 
   @include mobile {
-    font-size: 35%;
+    font-size: 40%;
   }
 }
 
+.section .container {
+  @include desktop {
+    padding-block: 140px;
+  }
+}
 .container {
   max-width: 1600px;
-  padding-inline: 24px;
+  padding-inline: 64px;
   margin: 0 auto;
 
-  @include desktop {
-    &:not(.greeting-wrap, .header-wrap) {
-      padding-inline: 124px;
-    }
-  }
-
-  @include tablet {
-    &:not(.greeting-wrap, .header-wrap) {
-      padding-inline: 48px !important;
-    }
-  }
   @include mobile {
-    &:not(.greeting-wrap, .header-wrap) {
-      padding-block: 80px !important;
-      padding-inline: 24px !important;
-    }
+    padding-inline: 32px;
   }
 }
 
