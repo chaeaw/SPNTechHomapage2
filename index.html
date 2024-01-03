@@ -4,12 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- gsap -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
-
     <!-- fullpage -->
+    <script src="./assets/js/jquery-3.7.1.min.js"></script>
+    <script src="./assets/js/jquery.fullpage.js"></script>
+    <script src="./assets/js/scrolloverflow.min.js"></script>
+
     <link rel="stylesheet" href="./assets/css/jquery.fullpage.min.css" />
 
     <link rel="stylesheet" href="./assets/css/fonts.css" />
@@ -136,12 +135,12 @@
       <section class="company section history fp-auto-height-responsive">
         <div class="container history-wrap">
           <div class="section-title">history</div>
-          <div class="left">
+          <div class="left pin-item">
             <span>2023년</span>
             <span>~</span>
             <span>2016년</span>
           </div>
-          <div class="right">
+          <div class="right history-right">
             <ul class="histroy-list">
               <li class="history-item">
                 <div class="year">2023</div>
@@ -577,19 +576,14 @@
     </div>
   </body>
 
-  <!-- fullpage -->
-  <script src="./assets/js/jquery-3.7.1.min.js"></script>
-  <script src="./assets/js/jquery.fullpage.js"></script>
-  <script src="./assets/js/scrolloverflow.min.js"></script>
   <script>
     $(document).ready(function () {
       $("#fullpage").fullpage({
         sectionSelector: ".section",
         scrollingSpeed: 1000,
         scrollOverflow: true,
-        autoScrolling: "auto",
-        autoScrolling: true,
         responsiveWidth: 1100,
+        responsiveHeight: 800,
         fitToSection: true,
         fitToSectionDelay: 1000,
         bigSectionsDestination: "top",
@@ -620,10 +614,15 @@
             $(".gnb-item").removeClass("active");
             $(".gnb-item").eq(4).addClass("active");
           }
+          if (index == 1 || index == 2) {
+            $(".header").removeClass("active");
+          } else {
+            $(".header").addClass("active");
+          }
         },
       });
     });
   </script>
-  <!-- js -->
+
   <script src="./assets/js/main.js"></script>
 </html>

@@ -2,6 +2,7 @@
   font-family: "Pretendard";
   font-weight: $basic-fw;
   letter-spacing: 0.4px;
+  word-break: keep-all;
 
   @include mobile {
     font-weight: $mobile-fw;
@@ -27,17 +28,38 @@ html {
 }
 
 .section .container {
+  margin-top: $header-height;
   @include desktop {
     padding-block: 140px;
   }
+
+  @include mobile {
+    margin-top: 0;
+    padding-block: 60px;
+  }
+
+  &.mv-wrap {
+    @include mobile {
+      padding-block: calc(60px + $header-height) 60px;
+    }
+  }
 }
+
 .container {
   max-width: 1600px;
   padding-inline: 64px;
   margin: 0 auto;
 
   @include mobile {
-    padding-inline: 32px;
+    &:not(.header-wrap) {
+      padding-inline: 32px;
+    }
+  }
+
+  @include height800 {
+    &:not(.header-wrap) {
+      padding-block: 120px;
+    }
   }
 }
 
