@@ -27,6 +27,11 @@ html {
   }
 }
 
+.section {
+  @include mobile {
+    min-height: 100vh;
+  }
+}
 .section .container {
   margin-top: $header-height;
   @include desktop {

@@ -35,6 +35,12 @@ html {
   }
 }
 
+@media all and (max-width: 768px) {
+  .section {
+    min-height: 100vh;
+  }
+}
+
 .section .container {
   margin-top: 80px;
 }
